@@ -1,0 +1,26 @@
+header {
+  background-color: var(--colour-primary);
+  height: 100px;
+  display: flex;
+  align-items: center;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width-header);
+    padding: 0 1rem;
+    width: 100%;
+  }
+
+  .birds {
+    background: url(/images/birds.png) no-repeat;
+    width: 225px;
+    height: 55px;
+    display: none;
+
+    @media (min-width: 880px) {
+      display: block;
+    }
+  }
+}
