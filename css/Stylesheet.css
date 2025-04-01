@@ -1,3 +1,6 @@
+/* This page is not in use. Keeping it to keep track of previous styles and work. */
+
+
 @import "_variables.css";
 @import "_base.css";
 @import "_typography.css";
@@ -240,3 +243,5 @@ input:focus + .labelline input:valid + .labelline {
 h3 {
   border-style: solid;
 }
+
+

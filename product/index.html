@@ -7,36 +7,41 @@
       name="description"
       content="Rainydays - Selections of outdoor jackets for all kinds of weather"
     />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Rainydays - Push the limits</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Products - Push the limits</title>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="images/apple-touch-icon.png"
+      href="../images/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="images/favicon-32x32.png"
+      href="../images/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="images/favicon-16x16.png"
+      href="../images/favicon-16x16.png"
     />
-    <link rel="manifest" href="images/site.webmanifest" />
+    <!-- <link rel="manifest" href="images/site.webmanifest" /> -->
+    <script src="../js/product.js" defer></script>
   </head>
   <body>
     <header>
       <div class="container">
         <a class="logo" href="/">
-          <img src="images/logo.png" alt="Rainy Days logo" />
+          <img src="../images/logo.png" alt="Rainy Days logo" />
         </a>
         <nav>
           <input type="checkbox" id="sidebar-active" />
-          <label for="sidebar-active" class="open-sidebar-button">
+          <label
+            for="sidebar-active"
+            class="open-sidebar-button"
+            aria-label="Open menu"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="32"
@@ -61,41 +66,34 @@
                 />
               </svg>
             </label>
-            <a class="home-link active" href="index.html">Home</a>
-            <a class="Woman`s" href="woman.html">Woman's</a>
-            <a class="Men's" href="men.html">Men's</a>
-            <a class="Cart" href="Checkout.html">Cart</a>
-            <a class="About" href="About.html">About</a>
+            <a class="home-link active" href="../index.html">Home</a>
+            <a class="Woman`s" href="../woman.html">Woman's</a>
+            <a class="Men's" href="../men.html">Men's</a>
+            <a class="Cart" href="../checkout/index.html">Cart</a>
+            <a class="About" href="../About.html">About</a>
           </div>
         </nav>
         <div class="birds"></div>
       </div>
     </header>
     <main>
-        <footer>
-            <div class="payments">
-              <div>a</div>
-              <div>b</div>
-              <div>c</div>
-            </div>
-            <div class="menu">
-              <nav>
-            <a class="home-link active" href="index.html">Home</a>
-            <a class="Woman`s" href="woman.html">Woman's</a>
-            <a class="Men's" href="men.html">Men's</a>
-            <a class="Checkout" href="Checkout.html">Cart</a>
-            <a class="About" href="About.html">About</a>
-              </nav>
-              <div class="copy">
-                &copy; 2024 Nordic Rainwear Co. All rights reserved
-              </div>
-            </div>
-            <div class="social">
-              <div>a</div>
-              <div>b</div>
-              <div>c</div>
-            </div>
-          </footer>
-        </body>
-      </html>
-      
+      <div id="product" class="productcontainer" aria-live="polite"></div>
+    </main>
+    <footer>
+      <div class="payments"></div>
+      <div class="menu">
+        <nav>
+          <a class="home-link active" href="../index.html">Home</a>
+          <a class="Woman`s" href="../woman.html">Woman's</a>
+          <a class="Men's" href="../men.html">Men's</a>
+          <a class="Cart" href="../checkout/index.html">Cart</a>
+          <a class="About" href="../About.html">About</a>
+        </nav>
+        <div class="copy">
+          &copy; 2024 Nordic Rainwear Co. All rights reserved
+        </div>
+      </div>
+      <div class="social"></div>
+    </footer>
+  </body>
+</html>

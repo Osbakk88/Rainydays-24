@@ -21,6 +21,7 @@ footer {
   color: var(--colour-text);
   padding: 2rem;
   text-align: center;
+  align-items: center;
   position: relative;
   font-size: medium;
   margin-top: 4rem;
@@ -74,4 +75,106 @@ footer {
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
+}
+
+.cardcontainer {
+  max-width: 1200px; /* var(--max-width); */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+.card {
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: scale-down;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-price {
+  font-size: 1.1rem;
+  color: #2ecc71;
+  font-weight: bold;
+}
+.card-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+}
+.card-button {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.card-button:hover {
+  background-color: #2980b9;
+}
+.card-button:active {
+  background-color: #1f6390;
+}
+.card-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.5);
+}
+.card-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.nice-button {
+  display: inline-block;
+  margin: 1rem;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #292c2f;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nice-button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.back-button:active {
+  background-color: #003f7f;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
 }

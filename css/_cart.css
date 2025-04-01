@@ -1,0 +1,121 @@
+/* Cart Container */
+.cartcontainer {
+  margin: 20px auto;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.remove-button {
+  background-color: #ff4d4d; /* Red background */
+  color: white; /* White text */
+  border: none; /* No border */
+  border-radius: 50%; /* Makes the button round */
+  width: 15px; /* Width of the button */
+  height: 15px; /* Height of the button */
+  display: flex; /* Center the text */
+  align-items: center; /* Center the text vertically */
+  justify-content: center; /* Center the text horizontally */
+  font-size: 10px; /* Font size for the "X" */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.remove-button:hover {
+  background-color: #ff1a1a; /* Darker red on hover */
+}
+
+/* Style the form container */
+.checkout-form {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Style the input fields */
+.form-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add focus effect to input fields */
+.form-input:focus {
+  border-color: #2c2e31;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Style the labels (if you add them later) */
+.form-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style the checkout button */
+.checkout-form .nice-button {
+  align-self: flex-end;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #292c2f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the button */
+.checkout-form .nice-button:hover {
+  background-color: #0056b3;
+}
+
+/* Add spacing between the form and other elements */
+.checkout-form + .button-container {
+  margin-top: 20px;
+}
+
+.table-header-left {
+  text-align: left;
+}
+
+.product-table {
+  width: 100%; /* Make the table take up the full width of its container */
+  border-collapse: collapse; /* Remove gaps between table cells */
+  margin: 20px 0; /* Add some spacing around the table */
+  font-size: 16px; /* Set a readable font size */
+  text-align: left; /* Align text to the left */
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid #ddd; /* Add a border to table cells */
+  padding: 12px; /* Add padding inside cells */
+}
+
+.product-table th {
+  background-color: #f4f4f4; /* Light gray background for headers */
+  font-weight: bold; /* Make header text bold */
+}
+
+.product-table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Add a light background for even rows */
+}
+
+.product-table tr:hover {
+  background-color: #f1f1f1; /* Highlight row on hover */
+}
