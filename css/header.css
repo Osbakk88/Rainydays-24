@@ -12,15 +12,15 @@ header {
     padding: 0 1rem;
     width: 100%;
   }
+}
 
-  .birds {
-    background: url(../images/birds.png) no-repeat;
-    width: 225px;
-    height: 55px;
-    display: none;
+.birds {
+  background: url(/images/birds.png) no-repeat;
+  width: 225px;
+  height: 55px;
+  display: none;
 
-    @media (min-width: 880px) {
-      display: block;
-    }
+  @media (min-width: 880px) {
+    display: block;
   }
 }
