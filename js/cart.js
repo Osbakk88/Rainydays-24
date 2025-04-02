@@ -1,6 +1,10 @@
 const container = document.getElementById("cart");
 const API_URL = "https://v2.api.noroff.dev/rainy-days";
 
+const loadingIndicator = document.createElement("div");
+loadingIndicator.textContent = "Loading...";
+container.appendChild(loadingIndicator);
+
 async function fetchAndCreateProduct() {
   try {
     if (!container) return;
@@ -24,8 +28,10 @@ async function fetchAndCreateProduct() {
     const backButton = document.createElement("a");
 
     productDiv.className = "product-details";
+    productDiv.setAttribute("aria-live", "polite");
     backButton.className = "nice-button";
     backButton.textContent = "Back to Products";
+    backButton.setAttribute("aria-label", "Go back to the product list");
     if (id !== null) {
       backButton.href = "../product/index.html" + `?id=${product.id}`;
     } else {
@@ -49,7 +55,12 @@ async function fetchAndCreateProduct() {
     table.appendChild(headerRow);
 
     // Retrieve existing cart items from sessionStorage
-    let cartItems = JSON.parse(sessionStorage.getItem("cartItems")) || [];
+    let cartItems;
+    try {
+      cartItems = JSON.parse(sessionStorage.getItem("cartItems")) || [];
+    } catch {
+      cartItems = [];
+    }
 
     if (id !== null) {
       // Add the new product to the cart
@@ -66,13 +77,10 @@ async function fetchAndCreateProduct() {
     //loop through the cart items and create table rows
     cartItems.forEach((item, index) => {
       const productRow = document.createElement("tr");
-      const productCell = document.createElement("td");
-      const priceCell = document.createElement("td");
+      const productCell = createTableCell(item.title);
+      const priceCell = createTableCell("$" + item.price);
       const removeCell = document.createElement("td");
       const removeButton = document.createElement("button");
-
-      productCell.textContent = item.title;
-      priceCell.textContent = "$" + item.price;
 
       removeButton.textContent = "X";
       removeButton.title = "Remove"; // Add a tooltip
@@ -112,10 +120,9 @@ async function fetchAndCreateProduct() {
 
     // Create an empty row just for spacing
     const emptyRow = document.createElement("tr");
-    const emptyCell1 = document.createElement("td");
-    const emptyCell2 = document.createElement("td");
+    const emptyCell1 = createTableCell("");
+    const emptyCell2 = createTableCell("");
 
-    emptyCell1.textContent = ""; // Empty cell for spacing
     // Add empty cells to the empty row
     emptyRow.appendChild(emptyCell1);
     emptyRow.appendChild(emptyCell2);
@@ -125,11 +132,9 @@ async function fetchAndCreateProduct() {
 
     // Add summary row
     const summaryRow = document.createElement("tr");
-    const summaryLabelCell = document.createElement("td");
-    const summaryValueCell = document.createElement("td");
+    const summaryLabelCell = createTableCell("Total");
+    const summaryValueCell = createTableCell("$" + totalPrice.toFixed(2));
 
-    summaryLabelCell.textContent = "Total";
-    summaryValueCell.textContent = "$" + totalPrice.toFixed(2);
     summaryValueCell.style.fontWeight = "bold";
     summaryLabelCell.style.fontWeight = "bold";
 
@@ -185,30 +190,33 @@ async function fetchAndCreateProduct() {
     nameField.placeholder = "Full Name";
     nameField.required = true;
     nameField.className = "form-input";
+    nameField.setAttribute("aria-label", "Full Name");
 
     const addressField = document.createElement("input");
     addressField.type = "text";
     addressField.placeholder = "Shipping Address";
     addressField.required = true;
     addressField.className = "form-input";
+    addressField.setAttribute("aria-label", "Shipping Address");
 
     const emailField = document.createElement("input");
     emailField.type = "email";
     emailField.placeholder = "Email Address";
     emailField.required = true;
     emailField.className = "form-input";
+    emailField.setAttribute("aria-label", "Email Address");
 
     const paymentField = document.createElement("input");
     paymentField.type = "text";
     paymentField.placeholder = "Payment Details (e.g., Card Number)";
     paymentField.required = true;
     paymentField.className = "form-input";
-    
+    paymentField.setAttribute("aria-label", "Payment Details");
 
     // Append input fields to the form
     form.appendChild(nameField);
     form.appendChild(addressField);
-    form.appendChild(emailField); 
+    form.appendChild(emailField);
     form.appendChild(paymentField);
 
     // Add the form below the table
@@ -220,6 +228,26 @@ async function fetchAndCreateProduct() {
     // Update the "Checkout" button to validate the form
     checkoutButton.addEventListener("click", (event) => {
       event.preventDefault(); // Prevent the form from submitting
+
+      if (!nameField.value) {
+        alert("Please enter your full name.");
+        return;
+      }
+
+      if (!addressField.value) {
+        alert("Please enter your Shipping Address.");
+        return;
+      }
+
+      if (!emailField.value) {
+        alert("Please enter your email address.");
+        return;
+      }
+
+      if (!paymentField.value) {
+        alert("Please enter your payment details.");
+        return;
+      }
 
       if (form.checkValidity()) {
         // Clear the cart
@@ -250,8 +278,18 @@ async function fetchAndCreateProduct() {
 
     container.appendChild(productDiv);
   } catch (error) {
-    container.textContent = "Failed to load products. Please try again later.";
+    container.textContent = "Failed to load products. Please try again later";
+    container.setAttribute("aria-live", "polite");
+  } finally {
+    loadingIndicator.remove();
   }
+}
+
+function createTableCell(content, className = "") {
+  const cell = document.createElement("td");
+  cell.textContent = content;
+  if (className) cell.className = className;
+  return cell;
 }
 
 fetchAndCreateProduct();

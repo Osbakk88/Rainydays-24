@@ -1,18 +1,33 @@
 const container = document.getElementById("femaleproducts");
 const API_URL = "https://v2.api.noroff.dev/rainy-days";
 
+const MESSAGES = {
+  loading: "Loading...",
+  noProducts: "No products available.",
+  error: "Failed to load products. Please try again later.",
+};
+
 async function fetchAndCreateFemaleProducts() {
   try {
     if (!container) return;
 
+    const loadingIndicator = document.createElement("div");
+    loadingIndicator.textContent = MESSAGES.loading;
+    container.appendChild(loadingIndicator);
+
     const response = await fetch(API_URL);
     const data = await response.json();
-    const products = data.data;
+    const products = data?.data || [];
 
-    if (products.length === 0) {
-      container.textContent = "No products available.";
+    // Remove the loading indicator once data is fetched
+    loadingIndicator.remove();
+
+    if (products === null) {
+      container.textContent = MESSAGES.noProducts;
       return;
     }
+
+    container.setAttribute("role", "list");
 
     products
       .filter((product) => product.gender === "Female")
@@ -37,6 +52,8 @@ async function fetchAndCreateFemaleProducts() {
         anchor.href = `product/index.html?id=${product.id}`;
         anchor.setAttribute("aria-label", `View details for ${product.title}`);
 
+        card.setAttribute("role", "listitem");
+
         content.appendChild(title);
         content.appendChild(price);
         card.appendChild(image);
@@ -46,7 +63,8 @@ async function fetchAndCreateFemaleProducts() {
         container.appendChild(anchor);
       });
   } catch (error) {
-    container.textContent = "Failed to load products. Please try again later.";
+    container.textContent = MESSAGES.error;
+    container.setAttribute("aria-live", "polite");
   }
 }
 
