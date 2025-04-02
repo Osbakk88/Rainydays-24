@@ -1,14 +1,19 @@
 /* This page is not in use. Keeping it to keep track of previous styles and work. */
 
 
-@import "_variables.css";
-@import "_base.css";
-@import "_typography.css";
-@import "_header.css";
-@import "_nav.css";
-@import "_home.css";
+@import "variables.css";
+@import "base.css";
+@import "typography.css";
+@import "header.css";
+@import "nav.css";
+@import "home.css";
 @import "style.css";
-@import "_men.css";
+@import "men.css";
+@import "products.css";
+@import "cart.css";
+@import "checkout.css";
+@import "footer.css";
+
 
 @import url(https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Halant:wght@300;400;500;600;700&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap);
 

@@ -4,5 +4,10 @@
 @import "header.css";
 @import "nav.css";
 @import "home.css";
+@import "style.css";
+@import "men.css";
 @import "products.css";
 @import "cart.css";
+@import "checkout.css";
+@import "footer.css";
+
