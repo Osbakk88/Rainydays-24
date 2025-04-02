@@ -1,8 +1,8 @@
-@import "_variables.css";
-@import "_base.css";
-@import "_typography.css";
-@import "_header.css";
-@import "_nav.css";
-@import "_home.css";
-@import "_products.css";
-@import "_cart.css";
+@import "variables.css";
+@import "base.css";
+@import "typography.css";
+@import "header.css";
+@import "nav.css";
+@import "home.css";
+@import "products.css";
+@import "cart.css";
