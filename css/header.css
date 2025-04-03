@@ -14,8 +14,8 @@ header {
   }
 }
 
-birds {
-  background: url(images/birds.png) no-repeat;
+.birds {
+  background: url(../images/birds.png) no-repeat;
   width: 225px;
   height: 55px;
   display: none;
