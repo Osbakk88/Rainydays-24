@@ -19,7 +19,7 @@ async function fetchAndCreateFemaleProducts() {
     const data = await response.json();
     const products = data?.data || [];
 
-    // Remove the loading indicator once data is fetched
+    // Removeing the loading indicator once data is fetched
     loadingIndicator.remove();
 
     if (products === null) {

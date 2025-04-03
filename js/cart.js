@@ -38,18 +38,18 @@ async function fetchAndCreateProduct() {
       backButton.href = "../index.html";
     }
 
-    // Create a table for product details
+    // Created table for product details
     const table = document.createElement("table");
     table.className = "product-table";
 
-    // Add table headers
+    // Added table headers
     const headerRow = document.createElement("tr");
     const headerProduct = document.createElement("th");
     const headerPrice = document.createElement("th");
     headerProduct.textContent = "Product";
-    headerProduct.className = "table-header-left"; // Apply the CSS class
+    headerProduct.className = "table-header-left"; // Apply in the CSS class
     headerPrice.textContent = "Price";
-    headerPrice.className = "table-header-left"; // Apply the CSS class
+    headerPrice.className = "table-header-left"; // Apply in the CSS class
     headerRow.appendChild(headerProduct);
     headerRow.appendChild(headerPrice);
     table.appendChild(headerRow);
@@ -92,7 +92,7 @@ async function fetchAndCreateProduct() {
         // Update sessionStorage
         sessionStorage.setItem("cartItems", JSON.stringify(cartItems));
 
-        // Refresh the UI
+        // Refreshing the UI
         productRow.remove();
 
         // Recalculate the total price
@@ -127,10 +127,10 @@ async function fetchAndCreateProduct() {
     emptyRow.appendChild(emptyCell1);
     emptyRow.appendChild(emptyCell2);
 
-    // Append the empty row to the table
+    // Appending the empty row to the table
     table.appendChild(emptyRow);
 
-    // Add summary row
+    // Adding summary row
     const summaryRow = document.createElement("tr");
     const summaryLabelCell = createTableCell("Total");
     const summaryValueCell = createTableCell("$" + totalPrice.toFixed(2));
@@ -145,11 +145,11 @@ async function fetchAndCreateProduct() {
     // Append the table and other elements to the productDiv
     productDiv.appendChild(table);
 
-    // Add "Empty Cart" and "Checkout" buttons below the table
+    // Adding "Empty Cart" and "Checkout" buttons below the table
     const buttonContainer = document.createElement("div");
     buttonContainer.className = "button-container";
 
-    // Create "Empty Cart" button
+    // "Empty Cart" button
     const emptyCartButton = document.createElement("button");
     emptyCartButton.textContent = "Empty Cart";
     emptyCartButton.className = "nice-button"; // Apply the same class as "Back to Products"
@@ -166,21 +166,21 @@ async function fetchAndCreateProduct() {
       window.location.href = "index.html";
     });
 
-    // Create "Checkout" button
+    // "Checkout" button
     const checkoutButton = document.createElement("button");
     checkoutButton.textContent = "Checkout";
     checkoutButton.className = "nice-button"; // Apply the same class as "Back to Products"
 
-    // Append buttons to the container
+    // Appends buttons to the container
     buttonContainer.appendChild(emptyCartButton);
 
-    // Append the "Back to Products" button to the button container
+    // Appends the "Back to Products" button to the button container
     buttonContainer.appendChild(backButton);
 
-    // Append the button container (with "Empty Cart" and "Back to Products" buttons) below the table
+    // Appends the button container (with "Empty Cart" and "Back to Products" buttons) below the table
     productDiv.appendChild(buttonContainer);
 
-    // Add a form for shipping and payment details
+    // Adding a form for shipping and payment details
     const form = document.createElement("form");
     form.className = "checkout-form";
 

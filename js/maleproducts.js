@@ -16,7 +16,8 @@ async function fetchAndCreateMaleProducts() {
     container.appendChild(loadingIndicator);
 
     const response = await fetch(API_URL);
-    // Remove the loading indicator once data is fetched
+    
+    // Removeing the loading indicator once data is fetched
     loadingIndicator.remove();
     const data = await response.json();
     const products = data.data;
