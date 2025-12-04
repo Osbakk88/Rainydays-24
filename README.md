@@ -1,6 +1,7 @@
 # Rainydays - Outdoor Jacket Store
 
-![Rainydays Website Preview](https://github.com/user-attachments/assets/5fc011e0-e5f6-4111-8c72-74b8b3e926de)
+![9B04A444-3F40-4032-BACC-C6F6298A7C01](https://github.com/user-attachments/assets/86140d2f-dc9a-4e06-86d9-0627d9b87c9d)
+
 
 ## Description
 
@@ -142,6 +143,10 @@ Assignment requirements:
 ## Contributing
 
 This is a student project for Noroff. Feedback and suggestions are welcome.
+
+## Live Site
+
+https://osbakk88.github.io/Rainydays-24/
 
 ## Contact
 
